@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.cdsxt.po">
+    <class name="Emp" table="emp">
+        <id name="empno" column="empno">
+            <generator class="sequence">
+                <param name="sequence">seq_emp</param>
+            </generator>
+        </id>
+        <property name="ename"/>
+        <property name="job"/>
+        <property name="mgr"/>
+        <property name="hiredate"/>
+        <property name="sal"/>
+        <property name="comm"/>
+
+        <many-to-one name="dept" class="Dept" column="deptno"/>
+    </class>
+</hibernate-mapping>
